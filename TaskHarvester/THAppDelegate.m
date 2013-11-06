@@ -12,7 +12,10 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-  // Insert code here to initialize your application
+  RKLogConfigureByName("RestKit/Network*", RKLogLevelTrace);
+  RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
+
+  [self setMainController:[THMainViewController new]];
 }
 
 @end

@@ -7,9 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "THMainViewController.h"
 
 @interface THAppDelegate : NSObject <NSApplicationDelegate>
-
-@property (assign) IBOutlet NSWindow *window;
-
+@property (strong) THMainViewController *mainController;
 @end

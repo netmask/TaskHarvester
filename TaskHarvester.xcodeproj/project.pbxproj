@@ -7,17 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61218A7F1822FFC600430FE7 /* THPivotalTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61218A7E1822FFC600430FE7 /* THPivotalTasksViewController.m */; };
+		612BB43918294CB100EC18C0 /* THPivotalTaskCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 612BB43818294CB100EC18C0 /* THPivotalTaskCellView.xib */; };
+		612BB43C18294FF300EC18C0 /* THPivotalTaskCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = 612BB43B18294FF300EC18C0 /* THPivotalTaskCellView.m */; };
+		612BB43F1829D88500EC18C0 /* THHarvestEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 612BB43E1829D88500EC18C0 /* THHarvestEntry.m */; };
+		612BB442182A0B9600EC18C0 /* THStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 612BB441182A0B9600EC18C0 /* THStore.m */; };
+		612BB445182A138200EC18C0 /* THHarvestTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 612BB444182A138200EC18C0 /* THHarvestTask.m */; };
 		613F34891822C6DF005F4F3A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613F34881822C6DF005F4F3A /* Cocoa.framework */; };
 		613F34931822C6DF005F4F3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 613F34911822C6DF005F4F3A /* InfoPlist.strings */; };
 		613F34951822C6DF005F4F3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 613F34941822C6DF005F4F3A /* main.m */; };
 		613F34991822C6DF005F4F3A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 613F34971822C6DF005F4F3A /* Credits.rtf */; };
 		613F349C1822C6DF005F4F3A /* THAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 613F349B1822C6DF005F4F3A /* THAppDelegate.m */; };
-		613F349F1822C6DF005F4F3A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 613F349D1822C6DF005F4F3A /* MainMenu.xib */; };
 		613F34A11822C6DF005F4F3A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 613F34A01822C6DF005F4F3A /* Images.xcassets */; };
 		613F34A81822C6DF005F4F3A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613F34A71822C6DF005F4F3A /* XCTest.framework */; };
 		613F34A91822C6DF005F4F3A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613F34881822C6DF005F4F3A /* Cocoa.framework */; };
 		613F34B11822C6DF005F4F3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 613F34AF1822C6DF005F4F3A /* InfoPlist.strings */; };
 		613F34B31822C6DF005F4F3A /* TaskHarvesterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 613F34B21822C6DF005F4F3A /* TaskHarvesterTests.m */; };
+		613F34C61822CCA8005F4F3A /* THMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 613F34C51822CCA8005F4F3A /* THMainViewController.m */; };
+		613F34C91822CCEC005F4F3A /* THHarvestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 613F34C81822CCEC005F4F3A /* THHarvestService.m */; };
+		613F34CF1822CD25005F4F3A /* THHarvestProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 613F34CE1822CD25005F4F3A /* THHarvestProject.m */; };
+		613F34DB1822D561005F4F3A /* THMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 613F34DA1822D561005F4F3A /* THMenuItemView.m */; };
+		613F34DD1822DA74005F4F3A /* THMenuItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 613F34DC1822DA74005F4F3A /* THMenuItemView.xib */; };
+		613F34E01822E604005F4F3A /* RMBlurredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 613F34DF1822E604005F4F3A /* RMBlurredView.m */; };
+		61C1A240182AA0D0005D8340 /* THSettingsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C1A23F182AA0D0005D8340 /* THSettingsView.m */; };
+		61DC93C8182435E500346963 /* THHarvestProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DC93C7182435E500346963 /* THHarvestProfile.m */; };
+		61DC93CC1825B2B700346963 /* THPivotalService.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DC93CB1825B2B700346963 /* THPivotalService.m */; };
+		61DC93CF1826CE6700346963 /* THPivotalProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DC93CE1826CE6700346963 /* THPivotalProject.m */; };
+		61DC93D218289BE900346963 /* THPivotalStory.m in Sources */ = {isa = PBXBuildFile; fileRef = 61DC93D118289BE900346963 /* THPivotalStory.m */; };
+		61DC93D41828B88E00346963 /* THSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61DC93D31828B88E00346963 /* THSettingsView.xib */; };
+		8A1CD008B44D445A8B466EE3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDCEB669637148CBB17559BC /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +49,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61218A7D1822FFC600430FE7 /* THPivotalTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THPivotalTasksViewController.h; path = ui/controllers/THPivotalTasksViewController.h; sourceTree = "<group>"; };
+		61218A7E1822FFC600430FE7 /* THPivotalTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THPivotalTasksViewController.m; path = ui/controllers/THPivotalTasksViewController.m; sourceTree = "<group>"; };
+		612BB43818294CB100EC18C0 /* THPivotalTaskCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = THPivotalTaskCellView.xib; path = ui/components/THPivotalTaskCellView.xib; sourceTree = "<group>"; };
+		612BB43A18294FF300EC18C0 /* THPivotalTaskCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THPivotalTaskCellView.h; path = ui/components/THPivotalTaskCellView.h; sourceTree = "<group>"; };
+		612BB43B18294FF300EC18C0 /* THPivotalTaskCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THPivotalTaskCellView.m; path = ui/components/THPivotalTaskCellView.m; sourceTree = "<group>"; };
+		612BB43D1829D88500EC18C0 /* THHarvestEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THHarvestEntry.h; path = services/harvest/models/THHarvestEntry.h; sourceTree = "<group>"; };
+		612BB43E1829D88500EC18C0 /* THHarvestEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THHarvestEntry.m; path = services/harvest/models/THHarvestEntry.m; sourceTree = "<group>"; };
+		612BB440182A0B9600EC18C0 /* THStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THStore.h; path = services/THStore.h; sourceTree = "<group>"; };
+		612BB441182A0B9600EC18C0 /* THStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THStore.m; path = services/THStore.m; sourceTree = "<group>"; };
+		612BB443182A138200EC18C0 /* THHarvestTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THHarvestTask.h; path = services/harvest/models/THHarvestTask.h; sourceTree = "<group>"; };
+		612BB444182A138200EC18C0 /* THHarvestTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THHarvestTask.m; path = services/harvest/models/THHarvestTask.m; sourceTree = "<group>"; };
 		613F34851822C6DF005F4F3A /* TaskHarvester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskHarvester.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		613F34881822C6DF005F4F3A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		613F348B1822C6DF005F4F3A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -43,13 +72,37 @@
 		613F34981822C6DF005F4F3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		613F349A1822C6DF005F4F3A /* THAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THAppDelegate.h; sourceTree = "<group>"; };
 		613F349B1822C6DF005F4F3A /* THAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = THAppDelegate.m; sourceTree = "<group>"; };
-		613F349E1822C6DF005F4F3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		613F34A01822C6DF005F4F3A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		613F34A61822C6DF005F4F3A /* TaskHarvesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskHarvesterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		613F34A71822C6DF005F4F3A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		613F34AE1822C6DF005F4F3A /* TaskHarvesterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TaskHarvesterTests-Info.plist"; sourceTree = "<group>"; };
 		613F34B01822C6DF005F4F3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		613F34B21822C6DF005F4F3A /* TaskHarvesterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskHarvesterTests.m; sourceTree = "<group>"; };
+		613F34C41822CCA8005F4F3A /* THMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THMainViewController.h; path = ui/controllers/THMainViewController.h; sourceTree = "<group>"; };
+		613F34C51822CCA8005F4F3A /* THMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THMainViewController.m; path = ui/controllers/THMainViewController.m; sourceTree = "<group>"; };
+		613F34C71822CCEC005F4F3A /* THHarvestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THHarvestService.h; path = services/harvest/THHarvestService.h; sourceTree = "<group>"; };
+		613F34C81822CCEC005F4F3A /* THHarvestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THHarvestService.m; path = services/harvest/THHarvestService.m; sourceTree = "<group>"; };
+		613F34CD1822CD25005F4F3A /* THHarvestProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THHarvestProject.h; path = services/harvest/models/THHarvestProject.h; sourceTree = "<group>"; };
+		613F34CE1822CD25005F4F3A /* THHarvestProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THHarvestProject.m; path = services/harvest/models/THHarvestProject.m; sourceTree = "<group>"; };
+		613F34D91822D561005F4F3A /* THMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THMenuItemView.h; path = ui/components/THMenuItemView.h; sourceTree = "<group>"; };
+		613F34DA1822D561005F4F3A /* THMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THMenuItemView.m; path = ui/components/THMenuItemView.m; sourceTree = "<group>"; };
+		613F34DC1822DA74005F4F3A /* THMenuItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = THMenuItemView.xib; path = ui/components/THMenuItemView.xib; sourceTree = "<group>"; };
+		613F34DE1822E604005F4F3A /* RMBlurredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RMBlurredView.h; path = vendor/RMBlurredView/RMBlurredView.h; sourceTree = "<group>"; };
+		613F34DF1822E604005F4F3A /* RMBlurredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RMBlurredView.m; path = vendor/RMBlurredView/RMBlurredView.m; sourceTree = "<group>"; };
+		61C1A23E182AA0D0005D8340 /* THSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THSettingsView.h; path = ui/components/THSettingsView.h; sourceTree = "<group>"; };
+		61C1A23F182AA0D0005D8340 /* THSettingsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THSettingsView.m; path = ui/components/THSettingsView.m; sourceTree = "<group>"; };
+		61DC93C6182435E500346963 /* THHarvestProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THHarvestProfile.h; path = services/harvest/models/THHarvestProfile.h; sourceTree = "<group>"; };
+		61DC93C7182435E500346963 /* THHarvestProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THHarvestProfile.m; path = services/harvest/models/THHarvestProfile.m; sourceTree = "<group>"; };
+		61DC93C91824364700346963 /* THMappable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = THMappable.h; path = services/THMappable.h; sourceTree = "<group>"; };
+		61DC93CA1825B2B700346963 /* THPivotalService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THPivotalService.h; path = services/pivotal/THPivotalService.h; sourceTree = "<group>"; };
+		61DC93CB1825B2B700346963 /* THPivotalService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THPivotalService.m; path = services/pivotal/THPivotalService.m; sourceTree = "<group>"; };
+		61DC93CD1826CE6700346963 /* THPivotalProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THPivotalProject.h; path = services/pivotal/models/THPivotalProject.h; sourceTree = "<group>"; };
+		61DC93CE1826CE6700346963 /* THPivotalProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THPivotalProject.m; path = services/pivotal/models/THPivotalProject.m; sourceTree = "<group>"; };
+		61DC93D018289BE900346963 /* THPivotalStory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = THPivotalStory.h; path = services/pivotal/models/THPivotalStory.h; sourceTree = "<group>"; };
+		61DC93D118289BE900346963 /* THPivotalStory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = THPivotalStory.m; path = services/pivotal/models/THPivotalStory.m; sourceTree = "<group>"; };
+		61DC93D31828B88E00346963 /* THSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = THSettingsView.xib; path = ui/components/THSettingsView.xib; sourceTree = "<group>"; };
+		826E79F6909345A59F19BA94 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		EDCEB669637148CBB17559BC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +111,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				613F34891822C6DF005F4F3A /* Cocoa.framework in Frameworks */,
+				8A1CD008B44D445A8B466EE3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,10 +130,12 @@
 		613F347C1822C6DF005F4F3A = {
 			isa = PBXGroup;
 			children = (
+				613F34E11822E609005F4F3A /* vendor */,
 				613F348E1822C6DF005F4F3A /* TaskHarvester */,
 				613F34AC1822C6DF005F4F3A /* TaskHarvesterTests */,
 				613F34871822C6DF005F4F3A /* Frameworks */,
 				613F34861822C6DF005F4F3A /* Products */,
+				826E79F6909345A59F19BA94 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +154,7 @@
 				613F34881822C6DF005F4F3A /* Cocoa.framework */,
 				613F34A71822C6DF005F4F3A /* XCTest.framework */,
 				613F348A1822C6DF005F4F3A /* Other Frameworks */,
+				EDCEB669637148CBB17559BC /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,9 +172,10 @@
 		613F348E1822C6DF005F4F3A /* TaskHarvester */ = {
 			isa = PBXGroup;
 			children = (
+				613F34C11822C9BD005F4F3A /* ui */,
+				613F34BC1822C972005F4F3A /* services */,
 				613F349A1822C6DF005F4F3A /* THAppDelegate.h */,
 				613F349B1822C6DF005F4F3A /* THAppDelegate.m */,
-				613F349D1822C6DF005F4F3A /* MainMenu.xib */,
 				613F34A01822C6DF005F4F3A /* Images.xcassets */,
 				613F348F1822C6DF005F4F3A /* Supporting Files */,
 			);
@@ -154,6 +212,109 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		613F34BC1822C972005F4F3A /* services */ = {
+			isa = PBXGroup;
+			children = (
+				613F34BE1822C98D005F4F3A /* pivotal */,
+				613F34BD1822C981005F4F3A /* harvest */,
+				61DC93C91824364700346963 /* THMappable.h */,
+				612BB440182A0B9600EC18C0 /* THStore.h */,
+				612BB441182A0B9600EC18C0 /* THStore.m */,
+			);
+			name = services;
+			sourceTree = "<group>";
+		};
+		613F34BD1822C981005F4F3A /* harvest */ = {
+			isa = PBXGroup;
+			children = (
+				613F34C01822C9A9005F4F3A /* models */,
+				613F34C71822CCEC005F4F3A /* THHarvestService.h */,
+				613F34C81822CCEC005F4F3A /* THHarvestService.m */,
+			);
+			name = harvest;
+			sourceTree = "<group>";
+		};
+		613F34BE1822C98D005F4F3A /* pivotal */ = {
+			isa = PBXGroup;
+			children = (
+				613F34BF1822C99F005F4F3A /* models */,
+				61DC93CA1825B2B700346963 /* THPivotalService.h */,
+				61DC93CB1825B2B700346963 /* THPivotalService.m */,
+			);
+			name = pivotal;
+			sourceTree = "<group>";
+		};
+		613F34BF1822C99F005F4F3A /* models */ = {
+			isa = PBXGroup;
+			children = (
+				61DC93CD1826CE6700346963 /* THPivotalProject.h */,
+				61DC93CE1826CE6700346963 /* THPivotalProject.m */,
+				61DC93D018289BE900346963 /* THPivotalStory.h */,
+				61DC93D118289BE900346963 /* THPivotalStory.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		613F34C01822C9A9005F4F3A /* models */ = {
+			isa = PBXGroup;
+			children = (
+				613F34CD1822CD25005F4F3A /* THHarvestProject.h */,
+				613F34CE1822CD25005F4F3A /* THHarvestProject.m */,
+				61DC93C6182435E500346963 /* THHarvestProfile.h */,
+				61DC93C7182435E500346963 /* THHarvestProfile.m */,
+				612BB43D1829D88500EC18C0 /* THHarvestEntry.h */,
+				612BB43E1829D88500EC18C0 /* THHarvestEntry.m */,
+				612BB443182A138200EC18C0 /* THHarvestTask.h */,
+				612BB444182A138200EC18C0 /* THHarvestTask.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		613F34C11822C9BD005F4F3A /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				613F34C31822C9DE005F4F3A /* components */,
+				613F34C21822C9D6005F4F3A /* controllers */,
+			);
+			name = ui;
+			sourceTree = "<group>";
+		};
+		613F34C21822C9D6005F4F3A /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				613F34C41822CCA8005F4F3A /* THMainViewController.h */,
+				613F34C51822CCA8005F4F3A /* THMainViewController.m */,
+				61218A7D1822FFC600430FE7 /* THPivotalTasksViewController.h */,
+				61218A7E1822FFC600430FE7 /* THPivotalTasksViewController.m */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		613F34C31822C9DE005F4F3A /* components */ = {
+			isa = PBXGroup;
+			children = (
+				613F34D91822D561005F4F3A /* THMenuItemView.h */,
+				613F34DA1822D561005F4F3A /* THMenuItemView.m */,
+				613F34DC1822DA74005F4F3A /* THMenuItemView.xib */,
+				61DC93D31828B88E00346963 /* THSettingsView.xib */,
+				612BB43818294CB100EC18C0 /* THPivotalTaskCellView.xib */,
+				612BB43A18294FF300EC18C0 /* THPivotalTaskCellView.h */,
+				612BB43B18294FF300EC18C0 /* THPivotalTaskCellView.m */,
+				61C1A23E182AA0D0005D8340 /* THSettingsView.h */,
+				61C1A23F182AA0D0005D8340 /* THSettingsView.m */,
+			);
+			name = components;
+			sourceTree = "<group>";
+		};
+		613F34E11822E609005F4F3A /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				613F34DE1822E604005F4F3A /* RMBlurredView.h */,
+				613F34DF1822E604005F4F3A /* RMBlurredView.m */,
+			);
+			name = vendor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -161,9 +322,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 613F34B61822C6DF005F4F3A /* Build configuration list for PBXNativeTarget "TaskHarvester" */;
 			buildPhases = (
+				8C1FE6DF631141AC98B315EA /* Check Pods Manifest.lock */,
 				613F34811822C6DF005F4F3A /* Sources */,
 				613F34821822C6DF005F4F3A /* Frameworks */,
 				613F34831822C6DF005F4F3A /* Resources */,
+				A0CE79255BC14887A211FB3D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -233,8 +396,10 @@
 			files = (
 				613F34931822C6DF005F4F3A /* InfoPlist.strings in Resources */,
 				613F34A11822C6DF005F4F3A /* Images.xcassets in Resources */,
+				61DC93D41828B88E00346963 /* THSettingsView.xib in Resources */,
+				613F34DD1822DA74005F4F3A /* THMenuItemView.xib in Resources */,
 				613F34991822C6DF005F4F3A /* Credits.rtf in Resources */,
-				613F349F1822C6DF005F4F3A /* MainMenu.xib in Resources */,
+				612BB43918294CB100EC18C0 /* THPivotalTaskCellView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,13 +413,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8C1FE6DF631141AC98B315EA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A0CE79255BC14887A211FB3D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		613F34811822C6DF005F4F3A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				613F34CF1822CD25005F4F3A /* THHarvestProject.m in Sources */,
+				61DC93D218289BE900346963 /* THPivotalStory.m in Sources */,
+				61DC93C8182435E500346963 /* THHarvestProfile.m in Sources */,
+				61DC93CF1826CE6700346963 /* THPivotalProject.m in Sources */,
+				613F34C61822CCA8005F4F3A /* THMainViewController.m in Sources */,
+				612BB43C18294FF300EC18C0 /* THPivotalTaskCellView.m in Sources */,
+				612BB445182A138200EC18C0 /* THHarvestTask.m in Sources */,
+				612BB43F1829D88500EC18C0 /* THHarvestEntry.m in Sources */,
+				613F34DB1822D561005F4F3A /* THMenuItemView.m in Sources */,
+				61218A7F1822FFC600430FE7 /* THPivotalTasksViewController.m in Sources */,
 				613F349C1822C6DF005F4F3A /* THAppDelegate.m in Sources */,
 				613F34951822C6DF005F4F3A /* main.m in Sources */,
+				61C1A240182AA0D0005D8340 /* THSettingsView.m in Sources */,
+				61DC93CC1825B2B700346963 /* THPivotalService.m in Sources */,
+				612BB442182A0B9600EC18C0 /* THStore.m in Sources */,
+				613F34E01822E604005F4F3A /* RMBlurredView.m in Sources */,
+				613F34C91822CCEC005F4F3A /* THHarvestService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,14 +504,6 @@
 				613F34981822C6DF005F4F3A /* en */,
 			);
 			name = Credits.rtf;
-			sourceTree = "<group>";
-		};
-		613F349D1822C6DF005F4F3A /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				613F349E1822C6DF005F4F3A /* Base */,
-			);
-			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
 		613F34AF1822C6DF005F4F3A /* InfoPlist.strings */ = {
@@ -382,6 +587,7 @@
 		};
 		613F34B71822C6DF005F4F3A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 826E79F6909345A59F19BA94 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -395,6 +601,7 @@
 		};
 		613F34B81822C6DF005F4F3A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 826E79F6909345A59F19BA94 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -465,6 +672,7 @@
 				613F34B81822C6DF005F4F3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		613F34B91822C6DF005F4F3A /* Build configuration list for PBXNativeTarget "TaskHarvesterTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +681,7 @@
 				613F34BB1822C6DF005F4F3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

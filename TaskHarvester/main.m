@@ -7,8 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "THAppDelegate.h"
 
 int main(int argc, const char * argv[])
 {
-  return NSApplicationMain(argc, argv);
+  [NSApplication sharedApplication];
+  THAppDelegate *appDelegate = [[THAppDelegate alloc] init];
+  [NSApp setDelegate:appDelegate];
+  [NSApp run];
 }

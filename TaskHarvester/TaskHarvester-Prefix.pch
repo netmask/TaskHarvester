@@ -6,4 +6,9 @@
 
 #ifdef __OBJC__
   #import <Cocoa/Cocoa.h>
+  #import <ObjectiveSugar.h>
+  #import <ReactiveCocoa.h>
+  #import <FXKeychain.h>
+  #import <RestKit.h>
+  #import "THStore.h"
 #endif

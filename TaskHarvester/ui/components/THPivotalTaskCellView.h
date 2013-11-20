@@ -12,8 +12,10 @@
 #import "THHarvestTask.h"
 
 @interface THPivotalTaskCellView : NSTableCellView
-@property IBOutlet NSLevelIndicator *pointsIndicator;
+
+@property IBOutlet NSTextField *storyInformation;
 @property IBOutlet NSTextField *taskName;
+
 @property IBOutlet NSButton *actionButton;
 @property IBOutlet NSProgressIndicator *activeIndicator;
 

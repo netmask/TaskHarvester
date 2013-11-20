@@ -35,9 +35,25 @@
   return _timeStartedAt != nil;
 }
 
--(void) startTimerWithStory:(THPivotalStory*) story
+-(void) switchTimer:(void (^)(RKObjectRequestOperation *operation,
+                              RKMappingResult *mappingResult))success
 {
-  NSLog(@"astarstars");
+  RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[THHarvestEntry mappings]
+                                                                                          method:RKRequestMethodGET
+                                                                                     pathPattern:@"/daily/timer/:day_entry_id"
+                                                                                         keyPath:nil
+                                                                                     statusCodes:RKStatusCodeIndexSetForClass(RKStatusCodeClassSuccessful)];
+  
+  [[[THHarvestService sharedinstance] objectManager] addResponseDescriptor:responseDescriptor];
+  
+  
+  [[[THHarvestService sharedinstance] objectManager] getObject:nil
+                                                           path:NSStringWithFormat(@"/daily/timer/%@", _id)
+                                                     parameters:nil
+                                                        success:success
+                                                        failure:nil];
+
+
 }
 
 @end

@@ -20,12 +20,13 @@
 #import "THHarvestService.h"
 #import "THPivotalService.h"
 #import "THSettingsView.h"
+#import "THStatusBarView.h"
 
 @interface THMainViewController : NSViewController<NSComboBoxDelegate>
 @property(strong) NSStatusItem *statusBarItem;
-@property(strong) NSMenuItem *mainMenuItem;
-@property(strong) THMenuItemView *mainMenuView;
 @property(strong) THPivotalTasksViewController *tasksView;
+
+@property (strong, nonatomic) IBOutlet THMenuItemView *view;
 
 @property NSMutableArray *harvestProjects;
 @property NSMutableArray *pivotalProjects;

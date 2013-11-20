@@ -39,11 +39,13 @@
                                 return [[cProject name] isEqual:[(NSComboBox*)[notification object] stringValue]];
                                 }] firstObject];
   
-  [[[THPivotalStory alloc] initWithProject:project] getAll:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+  [[[THPivotalStory alloc] initWithProject:project] getAll:^(RKObjectRequestOperation *operation,
+                                                             RKMappingResult *mappingResult) {
     [self setTasks:[[mappingResult array] mutableCopy]];
     [[self tasks] each:^(id task) {
       [task setProject:project];
     }];
+    
     [[self pivotalTasksView] reloadData];
   }];
 }
@@ -64,9 +66,13 @@
 
     [taskView setStory:[[self tasks] objectAtIndex:row]];
     
-    [taskView setEntry:[[[self harvestEntries] select:^BOOL(THHarvestEntry *eEntry) {
+    
+    [taskView setEntry:[[[self harvestEntries]
+                         select:^BOOL(THHarvestEntry *eEntry) {
       return [[eEntry notes] rangeOfString:[[taskView story] id]].location != NSNotFound;
     }] firstObject]];
+    
+    
   }
     
   return taskView;

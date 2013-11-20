@@ -14,16 +14,19 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code here.
+
+      NSArray *objects = @[];
+
+      if([[NSBundle mainBundle] loadNibNamed:@"THSettingsView"
+                                       owner:self
+                             topLevelObjects:&objects])
+      {
+        [self addSubview:[objects detect:^BOOL(id object) {
+          return [object isKindOfClass:NSView.class];
+        }]];
+      }
     }
     return self;
-}
-
-- (void)drawRect:(NSRect)dirtyRect
-{
-	[super drawRect:dirtyRect];
-	
-    // Drawing code here.
 }
 
 @end

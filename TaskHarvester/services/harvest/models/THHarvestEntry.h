@@ -19,5 +19,8 @@
 @property NSString *notes;
 
 -(BOOL) asTimer;
--(void) startTimerWithStory:(THPivotalStory*) story;
+
+-(void) switchTimer:(void (^)(RKObjectRequestOperation *operation,
+                                       RKMappingResult *mappingResult))success;
+
 @end

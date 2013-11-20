@@ -19,6 +19,7 @@
 @property NSString *url;
 @property NSNumber *estimate;
 @property NSString *currentState;
+@property NSDate *createdAt;
 
 
 

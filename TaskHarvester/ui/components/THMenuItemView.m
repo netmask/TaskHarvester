@@ -12,7 +12,7 @@
 @implementation THMenuItemView
 
 - (id) init {
-  self = [super initWithFrame:NSMakeRect(0, 0, 325, 500)];
+  self = [super initWithFrame:NSMakeRect(0, 0, 320, 495)];
   
   NSArray *objects = @[];
   
@@ -29,20 +29,16 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-  NSRect fullBounds = [self bounds];
-  fullBounds.size.height += 8;
-  fullBounds.origin.y -= 4;
+  [super drawRect:dirtyRect];
 
   CALayer *imageLayer = [self userImage].layer;
   [imageLayer setCornerRadius:25];
   [imageLayer setBorderWidth:1];
   [imageLayer setMasksToBounds:YES];
   
-  
-  [[NSBezierPath bezierPathWithRect:fullBounds] setClip];
-  
-  [[NSColor whiteColor] set];
-  NSRectFill( fullBounds );
+  [self setLayer:[[self superview] layer]];
+  [[[self superview] layer] setMasksToBounds:YES];
+
 }
 
 

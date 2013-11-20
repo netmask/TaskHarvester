@@ -17,7 +17,8 @@
                                                 @"name" : @"name",
                                                 @"url" : @"url",
                                                 @"estimate": @"estimate",
-                                                @"current_state" : @"currentState"
+                                                @"current_state" : @"currentState",
+                                                @"created_at" : @"createdAt"
                                                 }];
   
   return mapping;

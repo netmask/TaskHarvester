@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AC8259EF-30F6-4219-82FC-2A1EC61674FE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TaskHarvester</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>523FDD76-412E-4129-A923-B4D8FA945218</key>
+		<string>https://github.com/raffael/RMBlurredView.git</string>
+		<key>DBCBD88C-4B31-4010-A7D1-5791ABC2D329</key>
+		<string>ssh://github.com/netmask/TaskHarvester.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TaskHarvester.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>523FDD76-412E-4129-A923-B4D8FA945218</key>
+		<string>../vendor/RMBlurredView</string>
+		<key>DBCBD88C-4B31-4010-A7D1-5791ABC2D329</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/netmask/TaskHarvester.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>DBCBD88C-4B31-4010-A7D1-5791ABC2D329</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>523FDD76-412E-4129-A923-B4D8FA945218</string>
+			<key>IDESourceControlWCCName</key>
+			<string>RMBlurredView</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DBCBD88C-4B31-4010-A7D1-5791ABC2D329</string>
+			<key>IDESourceControlWCCName</key>
+			<string>TaskHarvester</string>
+		</dict>
+	</array>
+</dict>
+</plist>

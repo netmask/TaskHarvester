@@ -10,6 +10,7 @@
 #import "RMBlurredView.h"
 
 #import "THPivotalTasksViewController.h"
+#import "THSettingsView.h"
 
 @interface THMenuItemView : NSView
 @property(strong) IBOutlet NSImageView *userImage;
@@ -18,6 +19,7 @@
 @property(strong) IBOutlet NSTextField *currentTaskLabel;
 @property(strong) IBOutlet NSTextField *currentTaskInformationLabel;
 @property(strong) IBOutlet NSTextField *currentTaskTimerLabel;
+@property(strong) IBOutlet THSettingsView *settingsView;
 
 @property(strong) IBOutlet NSComboBox *projectList;
 @property(strong) IBOutlet NSComboBox *taskList;

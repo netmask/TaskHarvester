@@ -7,6 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <AXStatusItemPopup.h>
+
 #import "THMainViewController.h"
 
 @interface THAppDelegate : NSObject <NSApplicationDelegate>

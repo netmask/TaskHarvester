@@ -8,41 +8,45 @@
 
 #import "THPivotalTaskCellView.h"
 
-@implementation THPivotalTaskCellView
+@implementation THPivotalTaskCellView{
+  THStore *_store;
+}
 
 - (id)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
+      
+      _store = [THStore instance];
         [RACObserve(self, entry) subscribeNext:^(THHarvestEntry *entry) {
           if (entry){
-            if([entry asTimer]){
-              [self.actionButton setStringValue:@"stop"];
-              [self.activeIndicator setHidden:NO];
-              
-              [self.activeIndicator startAnimation:self];
+            if([entry asTimer]){                        
+              [self toggleStart];
             }else{
-              [self.actionButton setStringValue:@"start"];
-              [self.activeIndicator setHidden:YES];
-              [self.activeIndicator stopAnimation:self];
+              [self toggleStop];
             }
           }
         }];
-      
+
+      NSDateFormatter *dateFormatter = [NSDateFormatter new];
+      [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+
       [RACObserve(self, story) subscribeNext:^(THPivotalStory *story) {
         [_actionButton setAction:@selector(timerAction:)];
         [_actionButton setTarget:self];
         [_taskName setStringValue:[story name]];
-        [_pointsIndicator setIntegerValue:[[story estimate] integerValue]];
-
+        [_storyInformation setStringValue:NSStringWithFormat(@"%@ [pts] %@ %@ hours",
+                                                             [story estimate] != nil ? [story estimate] : @0 ,
+                                                             [dateFormatter stringFromDate:[story createdAt]],
+                                                             [_entry hours] != nil ? [_entry hours] : @0)];
+  
       }];
       
-      THStore *store = [THStore instance];
-      [RACObserve(store, currentActiveStory) subscribeNext:^(THPivotalStory *story) {
-        unless([story isEqual:self.story]){
-          [self.actionButton setStringValue:@"start"];
-          [self.activeIndicator setHidden:YES];
-          [self.activeIndicator stopAnimation:self];
+      [RACObserve(_store, currentActiveStory) subscribeNext:^(id x) {
+        if ([self.story isEqual:x]) {
+          [self toggleStart];
+        }else{
+          [self toggleStop];
         }
       }];
     }
@@ -50,13 +54,31 @@
     return self;
 }
 
+-(void)toggleStart
+{
+
+  [[self actionButton] setImage:[NSImage imageNamed:@"stop"]];
+  [[self activeIndicator] setHidden:NO];
+  [[self activeIndicator] startAnimation:self];
+
+
+}
+
+-(void) toggleStop
+{
+  [[self actionButton] setImage:[NSImage imageNamed:@"play"]];
+  [[self activeIndicator] setHidden:YES];
+  [[self activeIndicator] stopAnimation:self];
+}
 
 -(void)timerAction:(id) sender
 {
   if(self.entry){
-    [[self entry] startTimerWithStory:self.story];
+    [[self entry] switchTimer:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+      self.entry = [mappingResult firstObject];
+    }];
   }else{
-    [[[THStore instance] harvestTask] createEntryWithPivotalStory:self.story
+    [[_store harvestTask] createEntryWithPivotalStory:self.story
                                                           success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                             [self setEntry:[mappingResult firstObject]];
                                                             [[THStore instance] setCurrentActiveStory:self.story];
@@ -66,9 +88,10 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-	[super drawRect:dirtyRect];
-	
-  if([_entry asTimer])
-    [self.activeIndicator setHidden:NO];
+  NSDictionary *colors = @{@"feature" : [NSColor colorFromHexadecimalValue:@"DFE9F2"],
+                           @"bug" : [NSColor colorFromHexadecimalValue:@"FFF0F0"],
+                           @"release" : [NSColor colorFromHexadecimalValue:@"DBDBDB"]};
+  [(NSColor*)[colors objectForKey:[self.story storyType]] setFill];
+  NSRectFill(dirtyRect);
 }
 @end

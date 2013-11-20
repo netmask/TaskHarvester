@@ -18,7 +18,8 @@
   FXKeychain *keyChain;
 
   NSUserDefaults *_defaults;
-  THSettingsView *_settingsView;
+  NSPopover *_contentPopover;
+  
 }
 
 NSString const *kHarvestPassword = @"harvest.password";
@@ -33,11 +34,12 @@ NSString const *kPivotalPassword = @"pivotal.password";
 {
     self = [super init];
     if (self) {
-      [self setup];
       _totalHours = 0.0;
       _currentTaskHours = 0.0;
       keyChain =  [FXKeychain defaultKeychain];
       _defaults = [NSUserDefaults standardUserDefaults];
+
+      [self setup];
     }
     return self;
 }
@@ -45,31 +47,27 @@ NSString const *kPivotalPassword = @"pivotal.password";
 -(void) setup
 {
   [self setStatusBarItem:[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength]];
-  [[self statusBarItem] setTitle:@"H"]; //TODO: An a image maybe ??
-  [self.statusBarItem setHighlightMode:YES];
+
+  [self setView:[THMenuItemView new]];
   
-  NSMenu *menu = [NSMenu new];
+  //Bar item view
+  THStatusBarView *barView = [THStatusBarView new];
+  [[self statusBarItem] setView:barView];
+  _contentPopover = [NSPopover new];
+  [_contentPopover setContentViewController:self];
+  [_contentPopover setBehavior:NSPopoverBehaviorSemitransient];
   
-  [self setMainMenuItem:[[NSMenuItem alloc] init]];
-  [self setMainMenuView:[THMenuItemView new]];
-  
-  [self.mainMenuItem setView:self.mainMenuView];
-  
-  [menu addItem:self.mainMenuItem];
-  [[self statusBarItem] setMenu:menu];
-  
+  [barView setPopover:_contentPopover];
   
   [self setTasksView:[[THPivotalTasksViewController alloc]
-                      initWithTableView:self.mainMenuView.pivotalTaskListTable]];
+                      initWithTableView:self.view.pivotalTaskListTable]];
   
-  [[[self mainMenuView] settingsButton] setTarget:self];
-  [[[self mainMenuView] settingsButton] setAction:@selector(openSettingsDialog)];
+  [[[self view] settingsButton] setTarget:self];
+  [[[self view] settingsButton] setAction:@selector(openSettingsDialog)];
   
   THStore *store = [THStore instance];
   [RACObserve(store, asSettings) subscribeNext:^(id x) {
-    
-    
-    
+      
     if([x isEqualToNumber:@1]){
       [[THHarvestService sharedinstance] setupUsername:[_defaults objectForKey:kHarvestUsername]
                                               password:[_defaults objectForKey:kHarvestPassword]
@@ -84,24 +82,26 @@ NSString const *kPivotalPassword = @"pivotal.password";
       dispatch_async(queue, ^{ [self loadProfile];  });
       dispatch_async(queue, ^{ [self laoadProjects];});
       
-      [self.mainMenuView.projectList setDelegate:self];
-      [self.mainMenuView.taskList setDelegate:self];
+      [self.view.projectList setDelegate:self];
+      [self.view.taskList setDelegate:self];
       
-      [self.mainMenuView.pivotalProjectList setDelegate:self.tasksView];
+      [self.view.pivotalProjectList setDelegate:self.tasksView];
       
       [RACObserve(self, selectedProject) subscribeNext:^(id project) {
         
         [[THStore instance] setHarvestProject:project];
         
-        [self.mainMenuView.taskList removeAllItems];
-        [self.mainMenuView.taskList addItemsWithObjectValues:[[project tasks] map:^id(id task) {
+        [self.view.taskList removeAllItems];
+        [self.view.taskList addItemsWithObjectValues:[[project tasks] map:^id(id task) {
           return [task name];
         }]];
       }];
       
     }
+    
   }];
   
+//  [[THStore instance] setAsSettings:[_defaults boolForKey:@"asSettings"]];
 }
 
 -(void) laoadProjects
@@ -121,9 +121,9 @@ NSString const *kPivotalPassword = @"pivotal.password";
       _totalHours += [[object hours] floatValue];
     }];
     
-    [self.mainMenuView.currentTaskTimerLabel setStringValue:NSStringWithFormat(@"%f",_totalHours)];
+    [self.view.currentTaskTimerLabel setStringValue:NSStringWithFormat(@"%.2f", _totalHours)];
     
-    [self.mainMenuView.projectList addItemsWithObjectValues:[self.harvestProjects map:^id(id object) {
+    [self.view.projectList addItemsWithObjectValues:[self.harvestProjects map:^id(id object) {
       return [object name];
     }]];
   }];
@@ -131,7 +131,7 @@ NSString const *kPivotalPassword = @"pivotal.password";
   [[THPivotalProject alloc] getAll:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
     [self.tasksView setPivotalProjects:[[mappingResult array] mutableCopy]];
     
-    [self.mainMenuView.pivotalProjectList addItemsWithObjectValues:[[mappingResult array] map:^ id(id object) {
+    [self.view.pivotalProjectList addItemsWithObjectValues:[[mappingResult array] map:^ id(id object) {
       return [object name];
     }]];
   }];
@@ -144,12 +144,12 @@ NSString const *kPivotalPassword = @"pivotal.password";
   
   [[THHarvestProfile alloc] get:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
     THHarvestProfile *profile = [mappingResult firstObject];
-    [[self.mainMenuView userNameLabel] setStringValue:[profile displayName]];
-    [[self.mainMenuView companyLabel] setStringValue:[profile companyName]];
+    [[self.view userNameLabel] setStringValue:[profile displayName]];
+    [[self.view companyLabel] setStringValue:[profile companyName]];
   
     NSImage *avatar = [[NSImage alloc] initByReferencingURL:[[NSURL alloc] initWithString:profile.avatarUrl]];
     [avatar setSize:NSSizeFromCGSize(CGSizeMake(100, 100))];
-    [self.mainMenuView.userImage setImage:avatar];
+    [self.view.userImage setImage:avatar];
     
   }];
 }
@@ -160,66 +160,59 @@ NSString const *kPivotalPassword = @"pivotal.password";
 {
   NSComboBox *box = (NSComboBox*)[notification object];
   NSInteger index = [box indexOfItemWithObjectValue:[box objectValueOfSelectedItem]];
+  
   if([[box identifier] isEqualToString:@"harvest_project_box"]){
     [self setSelectedProject:(THHarvestProject*)[[self harvestProjects] objectAtIndex:index]];
   }
   
   if([[box identifier] isEqualToString:@"harvest_task_box"]){
-    
-      
-
-    [[THStore instance] setHarvestTask:[[[self selectedProject] tasks] objectAtIndex:index]];
-  
+    [[THStore instance] setHarvestTask:[[[self selectedProject] tasks] objectAtIndex:index]];  
   }
 
 }
 
 -(void)openSettingsDialog
 {
-  NSArray *objects = @[];
   
-  if([[NSBundle mainBundle] loadNibNamed:@"THSettingsView" owner:self topLevelObjects:&objects])
-  {
-    _settingsView = [objects detect:^BOOL(id object) {
-      return [object isKindOfClass:NSView.class];
-    }];
-    
-    [_settingsView setFrame:NSMakeRect(50, 0, 300,138 )];
-    [[_settingsView backButton] setAction:@selector(storeSettings)];
-    [[_settingsView backButton] setTarget:self];
-    
-    [@[@[[_settingsView harvestPasswordField], kHarvestPassword],
-       @[[_settingsView harvestUsernameField], kHarvestUsername],
-       @[[_settingsView harvestSubdomainField], kHarvestSubDomain],
-       @[[_settingsView pivotalPasswordField], kPivotalPassword],
-       @[[_settingsView pivotalUsernameField], kPivotalUsername]] each:^(id object) {
-         NSString  *value = nil;
-         
-         if ((value = [_defaults objectForKey:object[1]])) {
-           [object[0] setStringValue:value];
-         };
-       }];
-    
-    
-    [self.mainMenuItem setView:_settingsView];
-  }
+  
+  [self.view.settingsView debugDescription];
+  
 
+  [[self.view.settingsView backButton] setAction:@selector(storeSettings)];
+  [[self.view.settingsView backButton] setTarget:self];
+  
+  [@[@[[self.view.settingsView harvestPasswordField], kHarvestPassword],
+     @[[self.view.settingsView harvestUsernameField], kHarvestUsername],
+     @[[self.view.settingsView harvestSubdomainField], kHarvestSubDomain],
+     @[[self.view.settingsView pivotalPasswordField], kPivotalPassword],
+     @[[self.view.settingsView pivotalUsernameField], kPivotalUsername]] each:^(id object) {
+       NSString  *value = nil;
+       
+       if ((value = [_defaults objectForKey:object[1]])) {
+         [object[0] setStringValue:value];
+       };
+     }];
+
+  [self.view.settingsView setHidden:NO];
 }
 
 -(void) storeSettings
 {
   
-  [@[@[[_settingsView harvestPasswordField], kHarvestPassword],
-    @[[_settingsView harvestUsernameField], kHarvestUsername],
-    @[[_settingsView harvestSubdomainField], kHarvestSubDomain],
-    @[[_settingsView pivotalPasswordField], kPivotalPassword],
-    @[[_settingsView pivotalUsernameField], kPivotalUsername]] each:^(id object) {
+  [@[@[[self.view.settingsView harvestPasswordField], kHarvestPassword],
+    @[[self.view.settingsView harvestUsernameField], kHarvestUsername],
+    @[[self.view.settingsView harvestSubdomainField], kHarvestSubDomain],
+    @[[self.view.settingsView pivotalPasswordField], kPivotalPassword],
+    @[[self.view.settingsView pivotalUsernameField], kPivotalUsername]] each:^(id object) {
       [_defaults setObject:[object[0] stringValue] forKey:object[1]];
     }];
   
 
   [[THStore instance] setAsSettings:YES];
+  
+  [_defaults setBool:YES forKey:@"asSettings"];
+  [_defaults synchronize];
+  [self.view.settingsView setHidden:YES];
 
-  [self.mainMenuItem setView:self.mainMenuView];
 }
 @end

@@ -11,8 +11,8 @@
 @interface THSettingsView : NSView
 
 @property IBOutlet NSTextField *harvestUsernameField;
-@property IBOutlet NSTextField *harvestPasswordField;
-@property IBOutlet NSSecureTextField *harvestSubdomainField;
+@property IBOutlet NSSecureTextField *harvestPasswordField;
+@property IBOutlet NSTextField *harvestSubdomainField;
 
 @property IBOutlet NSTextField *pivotalUsernameField;
 @property IBOutlet NSSecureTextField *pivotalPasswordField;

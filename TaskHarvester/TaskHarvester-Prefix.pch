@@ -11,4 +11,5 @@
   #import <FXKeychain.h>
   #import <RestKit.h>
   #import "THStore.h"
+  #import "NSColor+Hex.h"
 #endif

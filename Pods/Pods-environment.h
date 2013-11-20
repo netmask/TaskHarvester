@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking 3
 
+// AXStatusItemPopup
+#define COCOAPODS_POD_AVAILABLE_AXStatusItemPopup
+#define COCOAPODS_VERSION_MAJOR_AXStatusItemPopup 0
+#define COCOAPODS_VERSION_MINOR_AXStatusItemPopup 0
+#define COCOAPODS_VERSION_PATCH_AXStatusItemPopup 1
+
 // FXKeychain
 #define COCOAPODS_POD_AVAILABLE_FXKeychain
 #define COCOAPODS_VERSION_MAJOR_FXKeychain 1
@@ -34,7 +40,7 @@
 #define COCOAPODS_POD_AVAILABLE_RKValueTransformers
 #define COCOAPODS_VERSION_MAJOR_RKValueTransformers 1
 #define COCOAPODS_VERSION_MINOR_RKValueTransformers 0
-#define COCOAPODS_VERSION_PATCH_RKValueTransformers 0
+#define COCOAPODS_VERSION_PATCH_RKValueTransformers 1
 
 // ReactiveCocoa
 #define COCOAPODS_POD_AVAILABLE_ReactiveCocoa
